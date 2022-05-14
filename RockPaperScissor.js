@@ -1,20 +1,36 @@
-const firstOption = `Rock`== 0
-const secondOption = `Paper`== 1
-const thirdOption = `Scissor` == 2
+const gameOptions = [`Rock`,`Paper`,`Scissors`]
 
-
-function ComputerPlay(minimum,maximum){
-  return Math.floor(Math.random() * (maximum-minimum +1) +minimum)  
+function game(){
+ playRound()
 }
 
-/*function playerSelection{
-    let output= prompt(`${firstOption},${secondOption},${thirdOption} game.\n Now,pick one and go to the Console`).toLowerCase().toUpperCase()
-    if(output !== firstOption|| output!==secondOption||output!==thirdOption){
-        alert(`Error: Wrong Answer`)
-    }
+function playRound(){
+const playerSelection = playerPlay()
+const computerSelection = computerPlay()
+}
+
+function playerPlay(){
+  let input=prompt(`Rock,Paper,Scissors game. type down below:`)
+  while(input==null){
+    input=prompt(`Rock,Paper,Scissors game. type down below:`)
+  }
+  input = input.toLowerCase()
+  let validate = validateInput(input)
+  while(validate == false){
+     input = prompt(`Type Rock,Paper, or Scissors`)
+     input = input.toLowerCase()
+     validate = validateInput(input)
+  }
+}
+
+function computerPlay(){
+ return gameOptions[Math.floor(Math.random()*gameOptions.lenght)]
+}
+
+function validateInput(option){
+    return gameOptions.includes(option)
+}
+        
     
-}*/
 
-function playRound(playerSelection, ComputerSelection){
-    if 
-}
+game()
