@@ -54,7 +54,7 @@ function computerPlay(){
     return `Computer wins.`
   }
  }
- 
+ for (let i = 0; i < 5; i++){
  game()
-
+ }
  //lacks polishment
