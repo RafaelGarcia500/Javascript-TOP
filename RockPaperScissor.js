@@ -8,6 +8,7 @@ function playRound(){
 const playerSelection = playerPlay()
 const computerSelection = computerPlay()
 const winner = checkWinner(playerSelection, computerSelection)
+console.log(`User chooses ${playerSelection}, The computer chooses ${computerSelection}`)
 console.log(winner)
 }
 
