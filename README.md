@@ -1,5 +1,5 @@
 # Javascript-TOP
 My projects for The Odin Project
 
-Currently working for a Rock,Paper, Scissors game.
+Currently working for my Rock,Paper, Scissors game.
 
