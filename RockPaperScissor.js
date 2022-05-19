@@ -1,61 +1,58 @@
 const gameOptions = [`rock`,`paper`,`scissors`]
 
+
 function game(){
  playRound()
+ 
 }
 
 function playRound(){
-const playerSelection = playerPlay()
-const computerSelection = computerPlay()
-const winner = checkWinner(playerSelection, computerSelection)
-console.log(`User chooses ${playerSelection}, The computer chooses ${computerSelection}`)
-console.log(winner)
+playResults()
 }
 
 function playerPlay(){
- let input = prompt(`Type Rock,Paper or Scissors`)
- while(input==null){
-  input = prompt(`Type Rock,Paper or Scissors`)
- }
- input = input.toLowerCase()
- let validate = validateInput(input)
- while(validate == false){
-   input = prompt(`Type Rock,Paper or Scissors`)
-   while(input==null){
-    input = prompt(`Type Rock,Paper or Scissors`)
-   }
-   input= input.toLowerCase()
-   validate = validateInput(input)
- }
- return input
+   let input = prompt(`Pick between Rock,Paper and Scissors and play against the Computer.`)
+  while(input == null ||input == undefined ){
+    input = prompt(`Pick between Rock,Paper and Scissors and play against the Computer.`)
+  }
+  if(input == `rock`|| input == `paper` || input == `scissors`){
+    console.log(`Player has chosen ${input}`)
+  }else{
+    alert(`Enter a valid value`)
+  }
+  return input
 }
 
 function computerPlay(){
-  return gameOptions[Math.floor(Math.random() * gameOptions.length)]
- }
+    return gameOptions[Math.floor(Math.random() * gameOptions.length)]
+   
+}
 
- function validateInput(option){
-   if(gameOptions.includes(option)){
-     return true
-   }else{
-     return false
-   }
- }
+function playResults(){
+  const playerSelection = playerPlay()
+  const computerSelection = computerPlay()
 
- function checkWinner(player, computer){
-  if(player === computer){
-    return `tie`
-  }else if(
-    (player === `rock` && computer ===`scissors`)||
-    (player === `scissors` && computer ===`paper`)|| 
-    (player === `paper` && computer ===`rock`)
-    ){
-    return ` Player wins.`
-  }else{
-    return `Computer wins.`
+  console.log(`Computer has chosen ${computerSelection}`)
+
+  if(playerSelection == `rock` && computerSelection == `scissors`){
+    console.log(`Rock beats Scissors. Player wins`)
   }
- }
- for (let i = 0; i < 5; i++){
- game()
- }
- //lacks polishment
+  if(playerSelection == `paper` && computerSelection == `rock`){
+    console.log(`Paper beats Rock. Player wins`)
+  }
+  if(playerSelection == `scissors` && computerSelection == `paper`){
+    console.log(`Scissors beat Paper. Player wins`)
+  }
+  if(playerSelection == `rock` && computerSelection == `paper`){
+    console.log(`Paper beats Rock. Computer wins`)
+  }
+  if(playerSelection == `scissors` && computerSelection == `rock`){
+    console.log(`Rock beats Scissors. Computer wins`)
+  }
+  if(playerSelection == `paper` && computerSelection == `scissors`){
+    console.log(`Scissors beat Paper. Computer wins`)
+  }else if(playerSelection == computerSelection){
+    console.log(`It is a Tie.`)
+  }
+}
+game()
