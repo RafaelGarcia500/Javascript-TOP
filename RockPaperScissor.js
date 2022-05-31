@@ -76,4 +76,5 @@ function playResults(){
     `)
   }
 }
+
 game()
