@@ -77,4 +77,3 @@ function playResults(){
   }
 }
 
-game()
