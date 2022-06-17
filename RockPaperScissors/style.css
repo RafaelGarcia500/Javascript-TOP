@@ -10,6 +10,12 @@ body{
     color: #ddd;
     
 }
+h1{
+    text-align: center;
+    padding: 50px 50px;
+    
+}
+
 
 .container{
     display: flex;
@@ -17,6 +23,19 @@ body{
     align-items: center;
     padding: 80px 50px;
     gap: 100px;
-    margin-top: 180px;
+    margin-top: 110px;
 }
 
+.user{
+
+}
+
+button{
+    cursor: pointer;
+    background-color: #183153;
+    border: 0px;
+}
+
+button:hover{
+    color: #ddd;
+}
